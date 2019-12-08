@@ -1,5 +1,5 @@
 ---
-title: nginx安装指南2
+title: nginx安装指南3
 categories: nginx
 ---
 
