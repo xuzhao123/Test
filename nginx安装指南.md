@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: nginx安装指南
 categories: nginx
 ---
 
