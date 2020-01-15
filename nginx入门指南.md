@@ -3,7 +3,7 @@ title: nginx入门指南
 categories: nginx
 ---
 
-## 安装
+## 一 安装
 
 nginx安装步骤如下:
 ```bash
@@ -20,9 +20,9 @@ make make install
 ```
 安装完毕
 
-## 常用操作
+## 二 常用操作
 
-### 查询nginx运行目录
+### 1. 查询nginx运行目录
 ```bash
 ps -ef | grep nginx
 
@@ -31,23 +31,23 @@ root     24996     1  0  2019 ?        00:00:00 nginx: master process /usr/local
 root     24997 24996  0  2019 ?        00:00:00 nginx: worker process
 ```
 
-### 验证配置是否正确
+### 2. 验证配置是否正确
 ```bash
 nginx -t
 ```
 
-### 停止nginx
+### 3. 停止nginx
 ```bash
 nginx -s stop
 nginx -s quit
 ```
 
-### 重启nginx
+### 4. 重启nginx
 ```bash
 nginx -s reload
 ```
 
-### nginx配置https
+### 5. nginx配置https
 ```bash
 # 1. 下载完证书文件，将证书文件保存到nginx安装目录
 scp -r [本地证书文件目录] [账号]@[nginx服务器ip]:[服务器证书文件目录]
@@ -72,9 +72,7 @@ scp -r [本地证书文件目录] [账号]@[nginx服务器ip]:[服务器证书�
 # 3. 重启nginx
 nginx -s reload
 ```
-一般来讲，做完上述操作就已经开启了https。
-
-同时也可以将http强行跳转到https
+一般来讲，做完上述操作就已经开启了https。同时也可以将http强行跳转到https：
 ```bash
 # 在nginx.conf中，加上rewrite记录
     server {
@@ -83,8 +81,9 @@ nginx -s reload
         rewrite ^(.*)$ https://$host$1 permanent;    
     } 
 ```
-另外可能会出现这样一句报错 [emerg] the "ssl" parameter requires ngx_http_ssl_module in /usr/local/nginx/conf/nginx.conf，提示是没有安装ssl模块导致，需要重新安装nginx。
-```
+另外可能会出现这样一句报错:
+[emerg] the "ssl" parameter requires ngx_http_ssl_module in /usr/local/nginx/conf/nginx.conf，提示是没有安装ssl模块导致，需要重新安装nginx。
+```bash
 # 进入nginx源码包
 ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
 make
