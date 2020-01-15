@@ -1,9 +1,7 @@
 ---
-title: nginx安装指南
+title: nginx入门指南
 categories: nginx
 ---
-
-# nginx入门指南
 
 ## 安装
 
