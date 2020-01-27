@@ -1,6 +1,6 @@
 ---
-title: flex总结
-categorie:s
+title: rem总结
+categorie:css
 ---
 
 ### rem 单位
@@ -61,3 +61,7 @@ html{
 }
 /* 把所有关心的尺寸都罗列出来 */
 ```
+
+#### rem + flexible.js
+
+flexianle.js 把页面分成了10等分，然后根据页面宽度，通过js动态的设置html的font-size。
