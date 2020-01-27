@@ -1,6 +1,6 @@
 ---
 title: rem总结
-categorie:css
+categorie: css
 ---
 
 ### rem 单位
